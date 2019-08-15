@@ -1,0 +1,79 @@
+
+example3O0:	file format Mach-O 64-bit x86-64
+
+Disassembly of section __TEXT,__text:
+__text:
+100000f70:	55 	pushq	%rbp
+100000f71:	48 89 e5 	movq	%rsp, %rbp
+100000f74:	c7 45 fc 00 00 00 00 	movl	$0, -4(%rbp)
+100000f7b:	c7 45 f8 00 00 00 00 	movl	$0, -8(%rbp)
+100000f82:	c7 45 f4 00 00 00 00 	movl	$0, -12(%rbp)
+100000f89:	83 7d f4 0a 	cmpl	$10, -12(%rbp)
+100000f8d:	0f 8d 17 00 00 00 	jge	23 <_main+0x3a>
+100000f93:	8b 45 f4 	movl	-12(%rbp), %eax
+100000f96:	03 45 f8 	addl	-8(%rbp), %eax
+100000f99:	89 45 f8 	movl	%eax, -8(%rbp)
+100000f9c:	8b 45 f4 	movl	-12(%rbp), %eax
+100000f9f:	83 c0 01 	addl	$1, %eax
+100000fa2:	89 45 f4 	movl	%eax, -12(%rbp)
+100000fa5:	e9 df ff ff ff 	jmp	-33 <_main+0x19>
+100000faa:	8b 45 f8 	movl	-8(%rbp), %eax
+100000fad:	5d 	popq	%rbp
+100000fae:	c3 	retq
+
+_main:
+100000f70:	55 	pushq	%rbp
+100000f71:	48 89 e5 	movq	%rsp, %rbp
+100000f74:	c7 45 fc 00 00 00 00 	movl	$0, -4(%rbp)
+100000f7b:	c7 45 f8 00 00 00 00 	movl	$0, -8(%rbp)
+100000f82:	c7 45 f4 00 00 00 00 	movl	$0, -12(%rbp)
+100000f89:	83 7d f4 0a 	cmpl	$10, -12(%rbp)
+100000f8d:	0f 8d 17 00 00 00 	jge	23 <_main+0x3a>
+100000f93:	8b 45 f4 	movl	-12(%rbp), %eax
+100000f96:	03 45 f8 	addl	-8(%rbp), %eax
+100000f99:	89 45 f8 	movl	%eax, -8(%rbp)
+100000f9c:	8b 45 f4 	movl	-12(%rbp), %eax
+100000f9f:	83 c0 01 	addl	$1, %eax
+100000fa2:	89 45 f4 	movl	%eax, -12(%rbp)
+100000fa5:	e9 df ff ff ff 	jmp	-33 <_main+0x19>
+100000faa:	8b 45 f8 	movl	-8(%rbp), %eax
+100000fad:	5d 	popq	%rbp
+100000fae:	c3 	retq
+Disassembly of section __TEXT,__unwind_info:
+__unwind_info:
+100000fb0:	01 00 	addl	%eax, (%rax)
+100000fb2:	00 00 	addb	%al, (%rax)
+100000fb4:	1c 00 	sbbb	$0, %al
+100000fb6:	00 00 	addb	%al, (%rax)
+100000fb8:	00 00 	addb	%al, (%rax)
+100000fba:	00 00 	addb	%al, (%rax)
+100000fbc:	1c 00 	sbbb	$0, %al
+100000fbe:	00 00 	addb	%al, (%rax)
+100000fc0:	00 00 	addb	%al, (%rax)
+100000fc2:	00 00 	addb	%al, (%rax)
+100000fc4:	1c 00 	sbbb	$0, %al
+100000fc6:	00 00 	addb	%al, (%rax)
+100000fc8:	02 00 	addb	(%rax), %al
+100000fca:	00 00 	addb	%al, (%rax)
+100000fcc:	70 0f 	jo	15 <__unwind_info+0x2d>
+100000fce:	00 00 	addb	%al, (%rax)
+100000fd0:	34 00 	xorb	$0, %al
+100000fd2:	00 00 	addb	%al, (%rax)
+100000fd4:	34 00 	xorb	$0, %al
+100000fd6:	00 00 	addb	%al, (%rax)
+100000fd8:	b0 0f 	movb	$15, %al
+100000fda:	00 00 	addb	%al, (%rax)
+100000fdc:	00 00 	addb	%al, (%rax)
+100000fde:	00 00 	addb	%al, (%rax)
+100000fe0:	34 00 	xorb	$0, %al
+100000fe2:	00 00 	addb	%al, (%rax)
+100000fe4:	03 00 	addl	(%rax), %eax
+100000fe6:	00 00 	addb	%al, (%rax)
+100000fe8:	0c 00 	orb	$0, %al
+100000fea:	01 00 	addl	%eax, (%rax)
+100000fec:	10 00 	adcb	%al, (%rax)
+100000fee:	01 00 	addl	%eax, (%rax)
+100000ff0:	00 00 	addb	%al, (%rax)
+100000ff2:	00 00 	addb	%al, (%rax)
+100000ff4:	00 00 	addb	%al, (%rax)
+100000ff6:	00 01 	addb	%al, (%rcx)

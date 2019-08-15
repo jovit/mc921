@@ -1,0 +1,116 @@
+
+example1O3:	file format Mach-O 64-bit x86-64
+
+Disassembly of section __TEXT,__text:
+__text:
+100000f40:	55 	pushq	%rbp
+100000f41:	48 89 e5 	movq	%rsp, %rbp
+100000f44:	48 83 ec 10 	subq	$16, %rsp
+100000f48:	48 8d 3d 5d 00 00 00 	leaq	93(%rip), %rdi
+100000f4f:	48 8d 75 fc 	leaq	-4(%rbp), %rsi
+100000f53:	31 c0 	xorl	%eax, %eax
+100000f55:	e8 26 00 00 00 	callq	38 <dyld_stub_binder+0x100000f80>
+100000f5a:	ff 45 fc 	incl	-4(%rbp)
+100000f5d:	83 45 fc 02 	addl	$2, -4(%rbp)
+100000f61:	8b 75 fc 	movl	-4(%rbp), %esi
+100000f64:	48 8d 3d 44 00 00 00 	leaq	68(%rip), %rdi
+100000f6b:	31 c0 	xorl	%eax, %eax
+100000f6d:	e8 08 00 00 00 	callq	8 <dyld_stub_binder+0x100000f7a>
+100000f72:	31 c0 	xorl	%eax, %eax
+100000f74:	48 83 c4 10 	addq	$16, %rsp
+100000f78:	5d 	popq	%rbp
+100000f79:	c3 	retq
+
+_main:
+100000f40:	55 	pushq	%rbp
+100000f41:	48 89 e5 	movq	%rsp, %rbp
+100000f44:	48 83 ec 10 	subq	$16, %rsp
+100000f48:	48 8d 3d 5d 00 00 00 	leaq	93(%rip), %rdi
+100000f4f:	48 8d 75 fc 	leaq	-4(%rbp), %rsi
+100000f53:	31 c0 	xorl	%eax, %eax
+100000f55:	e8 26 00 00 00 	callq	38 <dyld_stub_binder+0x100000f80>
+100000f5a:	ff 45 fc 	incl	-4(%rbp)
+100000f5d:	83 45 fc 02 	addl	$2, -4(%rbp)
+100000f61:	8b 75 fc 	movl	-4(%rbp), %esi
+100000f64:	48 8d 3d 44 00 00 00 	leaq	68(%rip), %rdi
+100000f6b:	31 c0 	xorl	%eax, %eax
+100000f6d:	e8 08 00 00 00 	callq	8 <dyld_stub_binder+0x100000f7a>
+100000f72:	31 c0 	xorl	%eax, %eax
+100000f74:	48 83 c4 10 	addq	$16, %rsp
+100000f78:	5d 	popq	%rbp
+100000f79:	c3 	retq
+Disassembly of section __TEXT,__stubs:
+__stubs:
+100000f7a:	ff 25 90 00 00 00 	jmpq	*144(%rip)
+100000f80:	ff 25 92 00 00 00 	jmpq	*146(%rip)
+Disassembly of section __TEXT,__stub_helper:
+__stub_helper:
+100000f88:	4c 8d 1d 79 00 00 00 	leaq	121(%rip), %r11
+100000f8f:	41 53 	pushq	%r11
+100000f91:	ff 25 69 00 00 00 	jmpq	*105(%rip)
+100000f97:	90 	nop
+100000f98:	68 00 00 00 00 	pushq	$0
+100000f9d:	e9 e6 ff ff ff 	jmp	-26 <__stub_helper>
+100000fa2:	68 0e 00 00 00 	pushq	$14
+100000fa7:	e9 dc ff ff ff 	jmp	-36 <__stub_helper>
+Disassembly of section __TEXT,__cstring:
+__cstring:
+100000fac:	25 64 00 25 64 	andl	$1680146532, %eax
+100000fb1:	0a 00 	orb	(%rax), %al
+Disassembly of section __TEXT,__unwind_info:
+__unwind_info:
+100000fb4:	01 00 	addl	%eax, (%rax)
+100000fb6:	00 00 	addb	%al, (%rax)
+100000fb8:	1c 00 	sbbb	$0, %al
+100000fba:	00 00 	addb	%al, (%rax)
+100000fbc:	00 00 	addb	%al, (%rax)
+100000fbe:	00 00 	addb	%al, (%rax)
+100000fc0:	1c 00 	sbbb	$0, %al
+100000fc2:	00 00 	addb	%al, (%rax)
+100000fc4:	00 00 	addb	%al, (%rax)
+100000fc6:	00 00 	addb	%al, (%rax)
+100000fc8:	1c 00 	sbbb	$0, %al
+100000fca:	00 00 	addb	%al, (%rax)
+100000fcc:	02 00 	addb	(%rax), %al
+100000fce:	00 00 	addb	%al, (%rax)
+100000fd0:	40 0f 00 00 	sldtw	(%rax)
+100000fd4:	34 00 	xorb	$0, %al
+100000fd6:	00 00 	addb	%al, (%rax)
+100000fd8:	34 00 	xorb	$0, %al
+100000fda:	00 00 	addb	%al, (%rax)
+100000fdc:	7b 0f 	jnp	15 <__unwind_info+0x39>
+100000fde:	00 00 	addb	%al, (%rax)
+100000fe0:	00 00 	addb	%al, (%rax)
+100000fe2:	00 00 	addb	%al, (%rax)
+100000fe4:	34 00 	xorb	$0, %al
+100000fe6:	00 00 	addb	%al, (%rax)
+100000fe8:	03 00 	addl	(%rax), %eax
+100000fea:	00 00 	addb	%al, (%rax)
+100000fec:	0c 00 	orb	$0, %al
+100000fee:	01 00 	addl	%eax, (%rax)
+100000ff0:	10 00 	adcb	%al, (%rax)
+100000ff2:	01 00 	addl	%eax, (%rax)
+100000ff4:	00 00 	addb	%al, (%rax)
+100000ff6:	00 00 	addb	%al, (%rax)
+100000ff8:	00 00 	addb	%al, (%rax)
+100000ffa:	00 01 	addb	%al, (%rcx)
+Disassembly of section __DATA,__nl_symbol_ptr:
+__nl_symbol_ptr:
+100001000:	00 00 	addb	%al, (%rax)
+100001002:	00 00 	addb	%al, (%rax)
+100001004:	00 00 	addb	%al, (%rax)
+100001006:	00 00 	addb	%al, (%rax)
+100001008:	00 00 	addb	%al, (%rax)
+10000100a:	00 00 	addb	%al, (%rax)
+10000100c:	00 00 	addb	%al, (%rax)
+10000100e:	00 00 	addb	%al, (%rax)
+Disassembly of section __DATA,__la_symbol_ptr:
+__la_symbol_ptr:
+100001010:	98 	cwtl
+100001011:	0f 00 00 	sldtw	(%rax)
+100001014:	01 00 	addl	%eax, (%rax)
+100001016:	00 00 	addb	%al, (%rax)
+100001018:	a2  <unknown>
+100001019:	0f 00 00 	sldtw	(%rax)
+10000101c:	01 00 	addl	%eax, (%rax)
+10000101e:	00 00 	addb	%al, (%rax)
