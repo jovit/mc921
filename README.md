@@ -1,2 +1,2 @@
 # mc921
-Labs for compilers class @ Unicamp
+Assignments for compilers class @ Unicamp
