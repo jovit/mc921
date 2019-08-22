@@ -1,3 +1,5 @@
+// remoção de calculos desnecessários
+// v = 45
 int main(void)
 {
     int v = 0;

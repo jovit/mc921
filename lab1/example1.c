@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+// Expansão de funções
 static void function1(volatile int *i)
 {
     *i += 1;

@@ -3,131 +3,47 @@ example3O3:	file format Mach-O 64-bit x86-64
 
 Disassembly of section __TEXT,__text:
 __text:
-100000f30:	55 	pushq	%rbp
-100000f31:	48 89 e5 	movq	%rsp, %rbp
-100000f34:	53 	pushq	%rbx
-100000f35:	50 	pushq	%rax
-100000f36:	48 8d 1d 6f 00 00 00 	leaq	111(%rip), %rbx
-100000f3d:	48 8d 75 f0 	leaq	-16(%rbp), %rsi
-100000f41:	31 c0 	xorl	%eax, %eax
-100000f43:	48 89 df 	movq	%rbx, %rdi
-100000f46:	e8 35 00 00 00 	callq	53 <dyld_stub_binder+0x100000f80>
-100000f4b:	48 8d 75 f4 	leaq	-12(%rbp), %rsi
-100000f4f:	31 c0 	xorl	%eax, %eax
-100000f51:	48 89 df 	movq	%rbx, %rdi
-100000f54:	e8 27 00 00 00 	callq	39 <dyld_stub_binder+0x100000f80>
-100000f59:	8b 45 f0 	movl	-16(%rbp), %eax
-100000f5c:	83 c0 14 	addl	$20, %eax
-100000f5f:	0f af 45 f4 	imull	-12(%rbp), %eax
-100000f63:	8d 74 00 0b 	leal	11(%rax,%rax), %esi
-100000f67:	31 c0 	xorl	%eax, %eax
-100000f69:	48 89 df 	movq	%rbx, %rdi
-100000f6c:	e8 09 00 00 00 	callq	9 <dyld_stub_binder+0x100000f7a>
-100000f71:	31 c0 	xorl	%eax, %eax
-100000f73:	48 83 c4 08 	addq	$8, %rsp
-100000f77:	5b 	popq	%rbx
-100000f78:	5d 	popq	%rbp
-100000f79:	c3 	retq
+100000fa0:	55 	pushq	%rbp
+100000fa1:	48 89 e5 	movq	%rsp, %rbp
+100000fa4:	b8 2d 00 00 00 	movl	$45, %eax
+100000fa9:	5d 	popq	%rbp
+100000faa:	c3 	retq
 
 _main:
-100000f30:	55 	pushq	%rbp
-100000f31:	48 89 e5 	movq	%rsp, %rbp
-100000f34:	53 	pushq	%rbx
-100000f35:	50 	pushq	%rax
-100000f36:	48 8d 1d 6f 00 00 00 	leaq	111(%rip), %rbx
-100000f3d:	48 8d 75 f0 	leaq	-16(%rbp), %rsi
-100000f41:	31 c0 	xorl	%eax, %eax
-100000f43:	48 89 df 	movq	%rbx, %rdi
-100000f46:	e8 35 00 00 00 	callq	53 <dyld_stub_binder+0x100000f80>
-100000f4b:	48 8d 75 f4 	leaq	-12(%rbp), %rsi
-100000f4f:	31 c0 	xorl	%eax, %eax
-100000f51:	48 89 df 	movq	%rbx, %rdi
-100000f54:	e8 27 00 00 00 	callq	39 <dyld_stub_binder+0x100000f80>
-100000f59:	8b 45 f0 	movl	-16(%rbp), %eax
-100000f5c:	83 c0 14 	addl	$20, %eax
-100000f5f:	0f af 45 f4 	imull	-12(%rbp), %eax
-100000f63:	8d 74 00 0b 	leal	11(%rax,%rax), %esi
-100000f67:	31 c0 	xorl	%eax, %eax
-100000f69:	48 89 df 	movq	%rbx, %rdi
-100000f6c:	e8 09 00 00 00 	callq	9 <dyld_stub_binder+0x100000f7a>
-100000f71:	31 c0 	xorl	%eax, %eax
-100000f73:	48 83 c4 08 	addq	$8, %rsp
-100000f77:	5b 	popq	%rbx
-100000f78:	5d 	popq	%rbp
-100000f79:	c3 	retq
-Disassembly of section __TEXT,__stubs:
-__stubs:
-100000f7a:	ff 25 90 00 00 00 	jmpq	*144(%rip)
-100000f80:	ff 25 92 00 00 00 	jmpq	*146(%rip)
-Disassembly of section __TEXT,__stub_helper:
-__stub_helper:
-100000f88:	4c 8d 1d 79 00 00 00 	leaq	121(%rip), %r11
-100000f8f:	41 53 	pushq	%r11
-100000f91:	ff 25 69 00 00 00 	jmpq	*105(%rip)
-100000f97:	90 	nop
-100000f98:	68 00 00 00 00 	pushq	$0
-100000f9d:	e9 e6 ff ff ff 	jmp	-26 <__stub_helper>
-100000fa2:	68 0e 00 00 00 	pushq	$14
-100000fa7:	e9 dc ff ff ff 	jmp	-36 <__stub_helper>
-Disassembly of section __TEXT,__cstring:
-__cstring:
-100000fac:	25  <unknown>
-100000fad:	64 00  <unknown>
+100000fa0:	55 	pushq	%rbp
+100000fa1:	48 89 e5 	movq	%rsp, %rbp
+100000fa4:	b8 2d 00 00 00 	movl	$45, %eax
+100000fa9:	5d 	popq	%rbp
+100000faa:	c3 	retq
 Disassembly of section __TEXT,__unwind_info:
 __unwind_info:
-100000fb0:	01 00 	addl	%eax, (%rax)
+100000fac:	01 00 	addl	%eax, (%rax)
+100000fae:	00 00 	addb	%al, (%rax)
+100000fb0:	1c 00 	sbbb	$0, %al
 100000fb2:	00 00 	addb	%al, (%rax)
-100000fb4:	1c 00 	sbbb	$0, %al
+100000fb4:	00 00 	addb	%al, (%rax)
 100000fb6:	00 00 	addb	%al, (%rax)
-100000fb8:	00 00 	addb	%al, (%rax)
+100000fb8:	1c 00 	sbbb	$0, %al
 100000fba:	00 00 	addb	%al, (%rax)
-100000fbc:	1c 00 	sbbb	$0, %al
+100000fbc:	00 00 	addb	%al, (%rax)
 100000fbe:	00 00 	addb	%al, (%rax)
-100000fc0:	00 00 	addb	%al, (%rax)
+100000fc0:	1c 00 	sbbb	$0, %al
 100000fc2:	00 00 	addb	%al, (%rax)
-100000fc4:	1c 00 	sbbb	$0, %al
+100000fc4:	02 00 	addb	(%rax), %al
 100000fc6:	00 00 	addb	%al, (%rax)
-100000fc8:	02 00 	addb	(%rax), %al
-100000fca:	00 00 	addb	%al, (%rax)
-100000fcc:	30 0f 	xorb	%cl, (%rdi)
-100000fce:	00 00 	addb	%al, (%rax)
-100000fd0:	34 00 	xorb	$0, %al
-100000fd2:	00 00 	addb	%al, (%rax)
-100000fd4:	34 00 	xorb	$0, %al
-100000fd6:	00 00 	addb	%al, (%rax)
-100000fd8:	7b 0f 	jnp	15 <__unwind_info+0x39>
+100000fc8:	a0 0f 00 00 34 00 00 00 34 	movabsb	3746994890844667919, %al
+100000fd1:	00 00 	addb	%al, (%rax)
+100000fd3:	00 ac 0f 00 00 00 00 	addb	%ch, (%rdi,%rcx)
 100000fda:	00 00 	addb	%al, (%rax)
-100000fdc:	00 00 	addb	%al, (%rax)
+100000fdc:	34 00 	xorb	$0, %al
 100000fde:	00 00 	addb	%al, (%rax)
-100000fe0:	34 00 	xorb	$0, %al
+100000fe0:	03 00 	addl	(%rax), %eax
 100000fe2:	00 00 	addb	%al, (%rax)
-100000fe4:	03 00 	addl	(%rax), %eax
-100000fe6:	00 00 	addb	%al, (%rax)
-100000fe8:	0c 00 	orb	$0, %al
+100000fe4:	0c 00 	orb	$0, %al
+100000fe6:	01 00 	addl	%eax, (%rax)
+100000fe8:	10 00 	adcb	%al, (%rax)
 100000fea:	01 00 	addl	%eax, (%rax)
-100000fec:	10 00 	adcb	%al, (%rax)
-100000fee:	01 00 	addl	%eax, (%rax)
+100000fec:	00 00 	addb	%al, (%rax)
+100000fee:	00 00 	addb	%al, (%rax)
 100000ff0:	00 00 	addb	%al, (%rax)
-100000ff2:	00 00 	addb	%al, (%rax)
-100000ff4:	01 00 	addl	%eax, (%rax)
-100000ff6:	01 01 	addl	%eax, (%rcx)
-Disassembly of section __DATA,__nl_symbol_ptr:
-__nl_symbol_ptr:
-100001000:	00 00 	addb	%al, (%rax)
-100001002:	00 00 	addb	%al, (%rax)
-100001004:	00 00 	addb	%al, (%rax)
-100001006:	00 00 	addb	%al, (%rax)
-100001008:	00 00 	addb	%al, (%rax)
-10000100a:	00 00 	addb	%al, (%rax)
-10000100c:	00 00 	addb	%al, (%rax)
-10000100e:	00 00 	addb	%al, (%rax)
-Disassembly of section __DATA,__la_symbol_ptr:
-__la_symbol_ptr:
-100001010:	98 	cwtl
-100001011:	0f 00 00 	sldtw	(%rax)
-100001014:	01 00 	addl	%eax, (%rax)
-100001016:	00 00 	addb	%al, (%rax)
-100001018:	a2  <unknown>
-100001019:	0f 00 00 	sldtw	(%rax)
-10000101c:	01 00 	addl	%eax, (%rax)
-10000101e:	00 00 	addb	%al, (%rax)
+100000ff2:	00 01 	addb	%al, (%rcx)

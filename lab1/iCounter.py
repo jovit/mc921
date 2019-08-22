@@ -118,7 +118,7 @@ subprocess.run(['gcc', '-O0', 'example3.c', '-o', 'example3O0'])
 p = subprocess.Popen('Objdump -D example3O0 > example3O0.dump', shell=True)
 os.waitpid(p.pid, 0)
 
-subprocess.run(['gcc', '-O3', 'example4.c', '-o', 'example3O3'])
+subprocess.run(['gcc', '-O3', 'example3.c', '-o', 'example3O3'])
 p = subprocess.Popen('Objdump -D example3O3 > example3O3.dump', shell=True)
 os.waitpid(p.pid, 0)
 

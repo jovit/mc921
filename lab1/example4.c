@@ -1,5 +1,7 @@
 #include <stdio.h>
-
+// remoção de variáveis desnecessárias
+// h = ((a + 20) * b + 5) * 2 + 1
+// 
 int main(void)
 {
     int a, b, c, d, e, f, g, h;
