@@ -1,3 +1,3 @@
-[submodule "lab2/lab2/mc921-lab2"]
-	path = lab2/lab2/mc921-lab2
-	url = https://github.com/berteodosio/mc921-lab2
+[submodule "lab2"]
+	path = lab2
+	url = https://github.com/berteodosio/mc921-lab2.git
