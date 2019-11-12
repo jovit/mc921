@@ -50,7 +50,7 @@ struct SimpleMath : public FunctionPass
   bool replaceConstants(Function &F)
   {
     bool changed = false;
-    std::stack<Instruction*> s;
+    std::stack<Instruction *> s;
 
     for (BasicBlock &BB : F)
     {
@@ -76,7 +76,7 @@ struct SimpleMath : public FunctionPass
           ConstantInt *VL = cast<ConstantInt>(left);
           ConstantInt *VR = cast<ConstantInt>(right);
           int result = VL->getZExtValue() + VR->getZExtValue();
-          ConstantInt *constResult = ConstantInt::get(F.getContext(), APInt(/*nbits*/32, result, /*bool*/true));
+          ConstantInt *constResult = ConstantInt::get(F.getContext(), APInt(/*nbits*/ 32, result, /*bool*/ true));
           I->replaceAllUsesWith(constResult);
           I->eraseFromParent();
           errs() << "Changed\n"
@@ -92,7 +92,7 @@ struct SimpleMath : public FunctionPass
           ConstantInt *VL = cast<ConstantInt>(left);
           ConstantInt *VR = cast<ConstantInt>(right);
           int result = VL->getZExtValue() - VR->getZExtValue();
-          ConstantInt *constResult = ConstantInt::get(F.getContext(), APInt(/*nbits*/32, result, /*bool*/true));
+          ConstantInt *constResult = ConstantInt::get(F.getContext(), APInt(/*nbits*/ 32, result, /*bool*/ true));
           I->replaceAllUsesWith(constResult);
           I->eraseFromParent();
           errs() << "Changed "
@@ -108,7 +108,7 @@ struct SimpleMath : public FunctionPass
           ConstantInt *VL = cast<ConstantInt>(left);
           ConstantInt *VR = cast<ConstantInt>(right);
           int result = VL->getZExtValue() * VR->getZExtValue();
-          ConstantInt *constResult = ConstantInt::get(F.getContext(), APInt(/*nbits*/32, result, /*bool*/true));
+          ConstantInt *constResult = ConstantInt::get(F.getContext(), APInt(/*nbits*/ 32, result, /*bool*/ true));
           I->replaceAllUsesWith(constResult);
           I->eraseFromParent();
           errs() << "Changed\n"
@@ -124,7 +124,7 @@ struct SimpleMath : public FunctionPass
           ConstantInt *VL = cast<ConstantInt>(left);
           ConstantInt *VR = cast<ConstantInt>(right);
           int result = VL->getZExtValue() / VR->getZExtValue();
-          ConstantInt *constResult = ConstantInt::get(F.getContext(), APInt(/*nbits*/32, result, /*bool*/true));
+          ConstantInt *constResult = ConstantInt::get(F.getContext(), APInt(/*nbits*/ 32, result, /*bool*/ true));
           I->replaceAllUsesWith(constResult);
           I->eraseFromParent();
           errs() << "Changed\n"
@@ -133,7 +133,6 @@ struct SimpleMath : public FunctionPass
         }
         break;
       default:
-        errs() << "Instruction isn't arithmetic\n";
         break;
       }
     }
@@ -141,35 +140,58 @@ struct SimpleMath : public FunctionPass
     return changed;
   }
 
-  bool runOnFunction(Function &F)
+  int getInstructionNumber(Function &F, Instruction *I2)
   {
-    while(replaceConstants(F));
+    int numInst = 0;
 
-    for (BasicBlock &BB : F) {
-      for (Instruction &I : BB) {
-        Value *left;
-        Value *right;
-        switch (I.getOpcode()) {
-          case Instruction::Add:
-          case Instruction::Sub:
-          case Instruction::Mul:
-          case Instruction::SDiv:
-            left = I.getOperand(0);
-            right = I.getOperand(1);
-            isConstant(left);
-            isConstant(right);
-            errs() << "Instruction: " << I << "\n";
-            errs() << "    Left operand: ";
-            printOperand(left);
-            errs() << "    Right operand: ";
-            printOperand(right);
-            break;
-          default:
-            errs() << "Instruction isn't arithmetic\n";
-            break;
+    for (BasicBlock &BB : F)
+    {
+      for (Instruction &I : BB)
+      {
+        if (I.isIdenticalToWhenDefined(I2)) {
+          return numInst;
         }
+        numInst++;
       }
     }
+
+    return numInst;
+  }
+
+  void printTemps(Function &F)
+  {
+    int numInst = 0;
+
+    for (BasicBlock &BB : F)
+    {
+      for (Instruction &I : BB)
+      {
+        errs() << "I" << numInst << ":   " << I;
+        bool hasUses = false;
+        for (auto U : I.users())
+        { // U is of type User*
+          hasUses = true;
+          if (auto I2 = dyn_cast<Instruction>(U))
+          {
+            errs() << " | I" << getInstructionNumber(F, I2) << ":   " << *I2;
+          }
+        }
+        if (!hasUses)
+        {
+          errs() << " | I" << numInst << ":   " << I;
+        }
+        errs() << "\n";
+        numInst++;
+      }
+    }
+  }
+
+  bool runOnFunction(Function &F)
+  {
+    printTemps(F);
+    while (replaceConstants(F))
+      ;
+
     return true;
   }
 
