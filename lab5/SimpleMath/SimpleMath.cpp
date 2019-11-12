@@ -19,22 +19,6 @@ struct SimpleMath : public FunctionPass
     return false;
   }
 
-  void printOperand(Value *op)
-  {
-    if (isa<Instruction>(*op))
-    {
-      Instruction *_I = cast<Instruction>(op);
-      errs() << *_I << "\n";
-    }
-    else if (isa<ConstantInt>(*op))
-    {
-      ConstantInt *_V = cast<ConstantInt>(op);
-      errs() << std::to_string(_V->getSExtValue()) << "\n";
-    }
-    else
-      errs() << op << "\n";
-  }
-
   bool isConstant(Value *op)
   {
     if (isa<ConstantInt>(*op))
@@ -79,8 +63,6 @@ struct SimpleMath : public FunctionPass
           ConstantInt *constResult = ConstantInt::get(F.getContext(), APInt(/*nbits*/ 32, result, /*bool*/ true));
           I->replaceAllUsesWith(constResult);
           I->eraseFromParent();
-          errs() << "Changed\n"
-                 << result;
           changed = true;
         }
         break;
@@ -95,8 +77,6 @@ struct SimpleMath : public FunctionPass
           ConstantInt *constResult = ConstantInt::get(F.getContext(), APInt(/*nbits*/ 32, result, /*bool*/ true));
           I->replaceAllUsesWith(constResult);
           I->eraseFromParent();
-          errs() << "Changed "
-                 << constResult->getZExtValue() << " \n";
           changed = true;
         }
         break;
@@ -111,8 +91,6 @@ struct SimpleMath : public FunctionPass
           ConstantInt *constResult = ConstantInt::get(F.getContext(), APInt(/*nbits*/ 32, result, /*bool*/ true));
           I->replaceAllUsesWith(constResult);
           I->eraseFromParent();
-          errs() << "Changed\n"
-                 << result;
           changed = true;
         }
         break;
@@ -127,8 +105,6 @@ struct SimpleMath : public FunctionPass
           ConstantInt *constResult = ConstantInt::get(F.getContext(), APInt(/*nbits*/ 32, result, /*bool*/ true));
           I->replaceAllUsesWith(constResult);
           I->eraseFromParent();
-          errs() << "Changed\n"
-                 << result;
           changed = true;
         }
         break;
