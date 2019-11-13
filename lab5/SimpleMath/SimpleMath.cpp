@@ -142,19 +142,19 @@ struct SimpleMath : public FunctionPass
     {
       for (Instruction &I : BB)
       {
-        errs() << "I" << numInst << ":   " << I;
+        errs() << "I" << numInst << ": " << I;
         bool hasUses = false;
         for (auto U : I.users())
         { // U is of type User*
           hasUses = true;
           if (auto I2 = dyn_cast<Instruction>(U))
           {
-            errs() << " | I" << getInstructionNumber(F, I2) << ":   " << *I2;
+            errs() << " | I" << getInstructionNumber(F, I2) << ": " << *I2;
           }
         }
         if (!hasUses)
         {
-          errs() << " | I" << numInst << ":   " << I;
+          errs() << " | I" << numInst << ": " << I;
         }
         errs() << "\n";
         numInst++;
